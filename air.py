@@ -11,7 +11,7 @@ airdrops = {
     "StakeDAO": "https://gist.githubusercontent.com/nicholashc/d380275aa8118e018906feeda3a92be5/raw/07f4a09dd657a27080cc75eda5e864acc030af5f/stakedao.csv",
     "Curve": "https://gist.githubusercontent.com/nicholashc/f4a34c138087195237556077ea6490d7/raw/bfdf0a9886747dfe3465a2e8ea1bfb02ae0386ac/curve.csv",
     "Digg": "https://gist.githubusercontent.com/nicholashc/c21788b0f0391d0d2d2cdcc44940a0e3/raw/0dbdc85e0ebc4d2aaa7cda49d5aaeb903fef69c7/digg.csv",
-    "Pool": "https://raw.githubusercontent.com/pooltogether/merkle-distributor/main/bq-results-20210202-094742-fvr9ifm390n3.json"
+    "PoolTogether": "https://gist.githubusercontent.com/shalzz/2b278831b1444983dd5527ec89dfaf4a/raw/46dd3fb6b1389d7e588afdc082ff9c5b3594dc1c/pooltogether.csv"
 }
 
 my_addrs = [addr.lower() for addr in re.findall(r"0x\w{40}", open("addrs.txt").read())]

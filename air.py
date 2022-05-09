@@ -11,8 +11,10 @@ airdrops = {
     "StakeDAO": "https://gist.githubusercontent.com/nicholashc/d380275aa8118e018906feeda3a92be5/raw/07f4a09dd657a27080cc75eda5e864acc030af5f/stakedao.csv",
     "Curve": "https://gist.githubusercontent.com/nicholashc/f4a34c138087195237556077ea6490d7/raw/bfdf0a9886747dfe3465a2e8ea1bfb02ae0386ac/curve.csv",
     "Digg": "https://gist.githubusercontent.com/nicholashc/c21788b0f0391d0d2d2cdcc44940a0e3/raw/0dbdc85e0ebc4d2aaa7cda49d5aaeb903fef69c7/digg.csv",
-    "PoolTogether": "https://gist.githubusercontent.com/shalzz/2b278831b1444983dd5527ec89dfaf4a/raw/46dd3fb6b1389d7e588afdc082ff9c5b3594dc1c/pooltogether.csv"
+    "PoolTogether": "https://gist.githubusercontent.com/shalzz/2b278831b1444983dd5527ec89dfaf4a/raw/46dd3fb6b1389d7e588afdc082ff9c5b3594dc1c/pooltogether.csv",
 }
+
+hop = "https://raw.githubusercontent.com/hop-protocol/hop-airdrop/master/src/data/finalDistribution.csv"
 
 my_addrs = [addr.lower() for addr in re.findall(r"0x\w{40}", open("addrs.txt").read())]
 for drop, url in airdrops.items():
@@ -20,3 +22,8 @@ for drop, url in airdrops.items():
     for addr, amount, *_ in csv.reader(requests.get(url).text.splitlines()):
         if addr.lower() in my_addrs:
             print(addr, amount)
+
+print("Hop")
+for addr, _, _, _, _, amount in csv.reader(requests.get(hop).text.splitlines()):
+    if addr.lower in my_addrs:
+        print(addr, amount)

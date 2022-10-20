@@ -14,7 +14,8 @@ airdrops = {
     "PoolTogether": "https://gist.githubusercontent.com/shalzz/2b278831b1444983dd5527ec89dfaf4a/raw/46dd3fb6b1389d7e588afdc082ff9c5b3594dc1c/pooltogether.csv",
 }
 
-hop = "https://raw.githubusercontent.com/hop-protocol/hop-airdrop/master/src/data/finalDistribution.csv"
+hop  = "https://raw.githubusercontent.com/hop-protocol/hop-airdrop/master/src/data/finalDistribution.csv"
+safe = "https://gist.githubusercontent.com/tschubotz/f4f346afc6ca495ad3a53f4b58dba5dc/raw/75514fa612ec549a79905e621137b87e46dcf20b/safe_user_allocations.csv"
 
 my_addrs = [addr.lower() for addr in re.findall(r"0x\w{40}", open("addrs.txt").read())]
 for drop, url in airdrops.items():
@@ -25,5 +26,10 @@ for drop, url in airdrops.items():
 
 print("Hop")
 for addr, _, _, _, _, amount in csv.reader(requests.get(hop).text.splitlines()):
-    if addr.lower in my_addrs:
+    if addr.lower() in my_addrs:
+        print(addr, amount)
+
+print("Safe")
+for addr, _, _, _, _, amount in csv.reader(requests.get(safe).text.splitlines()):
+    if addr.lower() in my_addrs:
         print(addr, amount)

@@ -18,6 +18,7 @@ airdrops = {
 
 hop  = "https://raw.githubusercontent.com/hop-protocol/hop-airdrop/master/src/data/finalDistribution.csv"
 across = "https://raw.githubusercontent.com/across-protocol/acx-drop/main/final/final_combined.json"
+arbitrum = "https://raw.githubusercontent.com/benber86/arbitrum-airdrop/main/recipients.json"
 
 my_addrs = [addr.lower() for addr in re.findall(r"0x\w{40}", open("addrs.txt").read())]
 for drop, url in airdrops.items():
@@ -36,3 +37,9 @@ data = requests.get(across).json()
 for key in list(data.keys()):
     if key.lower() in my_addrs:
         print(key, data[key]['total'])
+
+print("Arbitrum")
+data = requests.get(arbitrum).json()
+for key in list(data.keys()):
+    if key.lower() in my_addrs:
+        print(key, data[key])

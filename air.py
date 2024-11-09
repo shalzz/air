@@ -14,12 +14,14 @@ airdrops = {
     "Digg": "https://gist.githubusercontent.com/nicholashc/c21788b0f0391d0d2d2cdcc44940a0e3/raw/0dbdc85e0ebc4d2aaa7cda49d5aaeb903fef69c7/digg.csv",
     "PoolTogether": "https://gist.githubusercontent.com/shalzz/2b278831b1444983dd5527ec89dfaf4a/raw/46dd3fb6b1389d7e588afdc082ff9c5b3594dc1c/pooltogether.csv",
     "Safe": "https://raw.githubusercontent.com/safe-global/safe-token/main/user-allocations/safes_tokens.csv",
-    "OP2": "https://raw.githubusercontent.com/ethereum-optimism/op-analytics/main/reference_data/address_lists/op_airdrop2_simple_list.csv"
+    "OP2": "https://raw.githubusercontent.com/ethereum-optimism/op-analytics/main/reference_data/address_lists/op_airdrop2_simple_list.csv",
+    "OP3": "https://raw.githubusercontent.com/ethereum-optimism/op-analytics/main/reference_data/address_lists/op_airdrop_3_simple_list.csv",
+    "OP4": "https://raw.githubusercontent.com/ethereum-optimism/op-analytics/main/reference_data/address_lists/op_airdrop_4_simple_list.csv"
 }
 
 hop  = "https://raw.githubusercontent.com/hop-protocol/hop-airdrop/master/src/data/finalDistribution.csv"
 across = "https://raw.githubusercontent.com/across-protocol/acx-drop/main/final/final_combined.json"
-op1 = "https://raw.githubusercontent.com/ethereum-optimism/op-analytics/main/reference_data/address_lists/op_airdrop1_addresses.csv"
+op1 = "https://raw.githubusercontent.com/ethereum-optimism/op-analytics/main/reference_data/address_lists/op_airdrop1_addresses_detailed_list.csv"
 arbitrum = "https://raw.githubusercontent.com/benber86/arbitrum-airdrop/main/recipients.json"
 
 my_addrs = [addr.lower() for addr in re.findall(r"0x\w{40}", open("addrs.txt").read())]
